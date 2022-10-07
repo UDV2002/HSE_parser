@@ -1,20 +1,49 @@
-https://www.hse.ru - main source:
+Main source - https://www.hse.ru :
 
-    https://www.hse.ru/org/persons/ - teachers and staff:
+    Teachers and staff - https://www.hse.ru/org/persons/ :
 
-        https://www.hse.ru/info/prof/ - honorary professors;
+        By campuses:
+            https://www.hse.ru/org/persons/?udept=22726 - Moscow;
+            https://www.hse.ru/org/persons/?udept=135288 - Nizhniy Novgorod;
+            https://www.hse.ru/org/persons/?udept=135083 - Saint's Petersburg;
+            https://www.hse.ru/org/persons/?udept=135213 - Perm'
 
-        https://www.hse.ru/personal/shohin/ - president;
+        By divisions:
 
-        https://www.hse.ru/personal/yasin/ - honorary scientific supervisor;
+            Education - https://www.hse.ru/org/persons/?udept=103790777 :
 
-        https://www.hse.ru/personal/kouzminov/ - scientific supervisor;
+                Lyceum - https://www.hse.ru/org/persons/?udept=567919894 ;
+                Magistracy school - https://www.hse.ru/org/persons/?udept=573223908 ;
+                Social-economic and computer science - https://www.hse.ru/org/persons/?udept=575254662 ;
+                Evening Correspondence Faculty of Economics and Management - https://www.hse.ru/org/persons/?udept=135243 ;
 
-        https://www.hse.ru/staff/anisimov - rector;
+            Extra-professional education - https://www.hse.ru/org/persons/?udept=103790783 :
 
-        https://www.hse.ru/org/hse/rectorat/index.html - rector administration (page error);
+                Interregional Methodological Center for Financial Literacy of
+                    the system of general and secondary vocational education -
+                    https://www.hse.ru/org/persons/?udept=217886196 ;
 
-        https://www.hse.ru/profunion - prof union
+                Pre-university education faculty - https://www.hse.ru/org/persons/?udept=135219 ;
+
+                faculty of professional retraining - https://www.hse.ru/org/persons/?udept=135249 ;
+
+                ... # too much unrelated branches of information
+
+        Other:
+
+            https://www.hse.ru/info/prof/ - honorary professors;
+
+            https://www.hse.ru/personal/shohin/ - president;
+
+            https://www.hse.ru/personal/yasin/ - honorary scientific supervisor;
+
+            https://www.hse.ru/personal/kouzminov/ - scientific supervisor;
+
+            https://www.hse.ru/staff/anisimov - rector;
+
+            https://www.hse.ru/org/hse/rectorat/index.html - rector administration (page error);
+
+            https://www.hse.ru/profunion - prof union;
 
 
     https://www.hse.ru/us/ - scientific union:

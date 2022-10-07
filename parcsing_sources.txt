@@ -1,1 +1,54 @@
-main source = https://www.hse.ru
+https://www.hse.ru - main source:
+
+    https://www.hse.ru/org/persons/ - teachers and staff:
+
+        https://www.hse.ru/info/prof/ - honorary professors;
+
+        https://www.hse.ru/personal/shohin/ - president;
+
+        https://www.hse.ru/personal/yasin/ - honorary scientific supervisor;
+
+        https://www.hse.ru/personal/kouzminov/ - scientific supervisor;
+
+        https://www.hse.ru/staff/anisimov - rector;
+
+        https://www.hse.ru/org/hse/rectorat/index.html - rector administration (page error);
+
+        https://www.hse.ru/profunion - prof union
+
+
+    https://www.hse.ru/us/ - scientific union:
+
+        https://www.hse.ru/us/elected2019 - union members;
+
+        https://www.hse.ru/us/committee-v2 - union committee;
+
+        https://www.hse.ru/us/list - academic secretaries of faculties and branches;
+
+        https://www.hse.ru/us/membership - numerical composition of academic councils
+
+
+    https://www.hse.ru/education/ - all education courses:
+
+        https://www.hse.ru/education/bachelor/ - bachelor courses;
+
+        https://www.hse.ru/education/magister/ - magistracy courses;
+
+        https://school.hse.ru - lyceum;
+
+        https://shkolnikam.hse.ru - information for school students;
+
+        https://busedu.hse.ru - extra education and business education;
+
+        https://elearning.hse.ru/mooc/ - online courses
+
+
+    https://www.hse.ru/n/education/ - new version of previous source: # much easier to parse!
+
+        https://www.hse.ru/n/education/bachelor - bachelor courses;
+
+        https://www.hse.ru/n/education/magister - magistracy courses;
+
+        https://www.hse.ru/n/education/dpo - extra education courses;
+
+        https://www.hse.ru/n/education/fdp - pre-university courses

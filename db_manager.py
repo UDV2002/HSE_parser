@@ -14,7 +14,7 @@ def db_connection():
 def create_table(table_name, parameters):
     try:
         conn = db_connection()
-        print('[INFO] Connection successful')
+        print('[INFO] Connection successful\n')
         with conn.cursor() as c:
             c.execute(
                 f"""CREATE TABLE IF NOT EXISTS {table_name}(
@@ -22,10 +22,10 @@ def create_table(table_name, parameters):
             )
 
         conn.commit()
-        print(f'[INFO] table {table_name} created successfully')
+        print(f'[INFO] table {table_name} created successfully\n')
 
     except Exception as e:
-        print('[INFO] Error while working with PostgreSQL', e)
+        print('[INFO] Error while working with PostgreSQL', e, "\n")
 
     finally:
         if conn:
@@ -36,29 +36,36 @@ def create_table(table_name, parameters):
 def insert_into_table(table_name, columns, values_amount, values):
     try:
         conn = db_connection()
-        print("[INFO] Connection successful")
+        print("[INFO] Connection successful\n")
         with conn.cursor() as c:
             c.execute(f"""INSERT INTO {table_name} ({columns}) VALUES {values};""")
         conn.commit()
-        print(f'[INFO] Successfully inserted data into {table_name} table')
+        print(f'[INFO] Successfully inserted data into {table_name} table\n')
 
     except Exception as e:
-        print(f"[INFO] Error while trying to insert data to {table_name} table", e)
+        print(f"[INFO] Error while trying to insert data to {table_name} table", e, "\n")
 
     finally:
         if conn:
             conn.close()
 
 
-# create_table("faculties", "id serial PRIMARY KEY,"
-#                           "name varchar(100) NOT NULL,"
-#                           "link varchar NOT NULL")
+def print_table_data(data, table_name, condition):
+    try:
+        conn = db_connection()
+        print("[INFO] Connection successful\n")
 
-create_table("magister_courses", "id serial PRIMARY KEY,"
-                                 "name varchar(100) NOT NULL,"
-                                 "link varchar NOT NULL,"
-                                 "language varchar(20) NOT NULL,"
-                                 "campus varchar(20) NOT NULL,"
-                                 "duration varchar(20) NOT NULL,"
-                                 "places varchar,"
-                                 "education_form varchar(20) NOT NULL")
+        with conn.cursor() as c:
+            c.execute(f"""SELECT {data} FROM {table_name} {condition};""")
+            print(c.fetchall())
+
+        print(f'[INFO] Successfully selected data from {table_name} table\n')
+
+    except Exception as e:
+        print(f"[INFO] Error while trying to select data from {table_name} table", e, "\n")
+
+    finally:
+        if conn:
+            conn.close()
+
+

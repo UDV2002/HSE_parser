@@ -146,13 +146,6 @@ if __name__ == '__main__':
 
     ref_sign = ''; page = 2; degree = ''
 
-    # faculties = []
-    # for f in get_faculties(params=''):
-    #     faculties.append(classes.Faculty(f.get('name'), f.get('link')))
-    #
-    # for f in faculties:
-    #     f.print_values()
-
     ref_sign = 'ma'; degree = 'magister'; magister_courses = []
     for page in range(1, 6 + 1):
         for magister_course in get_bm_courses(params={'page': page, 'ref_sign': ref_sign, 'degree': degree}):

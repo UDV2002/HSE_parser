@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
-# from flask import Flask
-# from flask_restful import Api, Resource
-# import csv
+from dataclasses import dataclass
+import classes
+import db_manager
 
 HOST = "https://www.hse.ru/"
 HEADERS = {
@@ -35,7 +35,7 @@ def get_faculties(params=''):
     return faculties
 
 
-def get_BM_courses(params=''):
+def get_bm_courses(params=''):
     url = HOST + f'n/education/{degree}/page/{page}/'
     html = get_html(url, params=params)
     soup = BeautifulSoup(html.text, 'html.parser')
@@ -145,6 +145,39 @@ def get_dpo_courses(params=''):
 if __name__ == '__main__':
 
     ref_sign = ''; page = 2; degree = ''
-    for course in get_dpo_courses(params={'page': page}):
-        print(course)
+
+    # faculties = []
+    # for f in get_faculties(params=''):
+    #     faculties.append(classes.Faculty(f.get('name'), f.get('link')))
+    #
+    # for f in faculties:
+    #     f.print_values()
+
+    ref_sign = 'ma'; degree = 'magister'; magister_courses = []
+    for page in range(1, 6 + 1):
+        for magister_course in get_bm_courses(params={'page': page, 'ref_sign': ref_sign, 'degree': degree}):
+            c = classes.Course()
+            c.set_all(magister_course)
+            magister_courses.append(c)
+
+    print(len(magister_courses))
+
+    for course in magister_courses:
+        course.print_values()
+
+    values = ''
+    for course in magister_courses:
+        if course != magister_courses[-1]:
+            values_string = f"('{course.name}', '{course.link}', '{course.language}', '{course.location}'," \
+                            f"'{course.duration}', '{course.places}', '{course.education_form}'), "
+        else:
+            values_string = f"('{course.name}', '{course.link}', '{course.language}', '{course.location}'," \
+                            f"'{course.duration}', '{course.places}', '{course.education_form}')"
+
+        values += values_string
+
+    db_manager.insert_into_table('magister_courses',
+                                 'name, link, language, campus, duration, places, education_form',
+                                 values)
+
 

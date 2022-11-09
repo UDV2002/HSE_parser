@@ -1,0 +1,5 @@
+host = 'localhost'
+user = 'postgres'
+password = 'pent02'
+db_name = 'HSE'
+port = '5432'

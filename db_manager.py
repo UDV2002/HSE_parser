@@ -57,7 +57,8 @@ def print_table_data(data, table_name, condition):
 
         with conn.cursor() as c:
             c.execute(f"""SELECT {data} FROM {table_name} {condition};""")
-            print(c.fetchall())
+            for line in c.fetchall():
+                print(line)
 
         print(f'[INFO] Successfully selected data from {table_name} table\n')
 
@@ -67,5 +68,6 @@ def print_table_data(data, table_name, condition):
     finally:
         if conn:
             conn.close()
+
 
 

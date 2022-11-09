@@ -147,30 +147,5 @@ if __name__ == '__main__':
     ref_sign = ''; page = 2; degree = ''
 
     ref_sign = 'ma'; degree = 'magister'; magister_courses = []
-    for page in range(1, 6 + 1):
-        for magister_course in get_bm_courses(params={'page': page, 'ref_sign': ref_sign, 'degree': degree}):
-            c = classes.Course()
-            c.set_all(magister_course)
-            magister_courses.append(c)
-
-    print(len(magister_courses))
-
-    for course in magister_courses:
-        course.print_values()
-
-    values = ''
-    for course in magister_courses:
-        if course != magister_courses[-1]:
-            values_string = f"('{course.name}', '{course.link}', '{course.language}', '{course.location}'," \
-                            f"'{course.duration}', '{course.places}', '{course.education_form}'), "
-        else:
-            values_string = f"('{course.name}', '{course.link}', '{course.language}', '{course.location}'," \
-                            f"'{course.duration}', '{course.places}', '{course.education_form}')"
-
-        values += values_string
-
-    db_manager.insert_into_table('magister_courses',
-                                 'name, link, language, campus, duration, places, education_form',
-                                 values)
 
 

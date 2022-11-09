@@ -14,5 +14,10 @@ def show_bachelor_courses():
     db_manager.print_table_data('*', 'bachelor_courses', '')
 
 
+@app.command()
+def show_magister_courses():
+    db_manager.print_table_data('*', 'magister_courses', '')
+
+
 if __name__ == '__main__':
     app()

@@ -14,7 +14,7 @@ def db_connection():
 def create_table(table_name, parameters):
     try:
         conn = db_connection()
-        print('[INFO] Connection successful\n')
+        print('[INFO] Connection to database successful\n')
         with conn.cursor() as c:
             c.execute(
                 f"""CREATE TABLE IF NOT EXISTS {table_name}(
@@ -36,7 +36,7 @@ def create_table(table_name, parameters):
 def insert_into_table(table_name, columns, values_amount, values):
     try:
         conn = db_connection()
-        print("[INFO] Connection successful\n")
+        print("[INFO] Connection to database successful\n")
         with conn.cursor() as c:
             c.execute(f"""INSERT INTO {table_name} ({columns}) VALUES {values};""")
         conn.commit()
@@ -53,7 +53,7 @@ def insert_into_table(table_name, columns, values_amount, values):
 def print_table_data(data, table_name, condition):
     try:
         conn = db_connection()
-        print("[INFO] Connection successful\n")
+        print("[INFO] Connection to database successful\n")
 
         with conn.cursor() as c:
             c.execute(f"""SELECT {data} FROM {table_name} {condition};""")

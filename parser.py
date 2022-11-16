@@ -148,4 +148,4 @@ if __name__ == '__main__':
 
     ref_sign = 'ma'; degree = 'magister'; magister_courses = []
 
-
+    print('parser.py')

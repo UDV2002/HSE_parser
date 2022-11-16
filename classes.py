@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import Enum
 import parser
-import click, typer
+import typer
 
 
 class Campus(Enum):

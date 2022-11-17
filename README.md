@@ -9,7 +9,7 @@
 
 #### Получить списки факультетов
 
-```http
+```
   main.py show-faculties {Parameter}
 ```
 
@@ -26,7 +26,7 @@
 ```
 #### Получить списки курсов бакалавриата
 
-```http
+```
   main.py show-bachelor-courses {Parameter}
 ```
 
@@ -50,7 +50,7 @@
 
 #### Получить списки курсов магистратуры
 
-```http
+```
   main.py show-magister-courses {Parameter}
 ```
 
@@ -67,9 +67,9 @@
 | `campuses` | `string` | Выводит город компуса (Москва, Петербург и т.д.) |
 
 Параметры вводятся в любом порядке через дефис "-". Пример использования ниже:
-```http
-  main.py show-magister-courses names-durations 
-  main.py show-magister-courses all             
+```
+  main.py show-magister-courses names-durations # Выведет названия и продолжительность обучения
+  main.py show-magister-courses all             # Выведет всю информацию по курсам 
 ```
 
 ## База данных

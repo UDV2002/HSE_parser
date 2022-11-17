@@ -18,8 +18,10 @@ def show_faculties(parameter):
                 else:
                     sql_string += parameters.get(word)
         else:
-
-            sql_string = parameters.get(parameter)
+            if parameter != 'all':
+                sql_string = parameters.get(parameter)
+            else:
+                sql_string = '*'
         db_manager.print_table_data(sql_string, 'faculties', '')
 
     except TypeError:

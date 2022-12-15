@@ -1,5 +1,6 @@
 import psycopg2
 from db_config import host, user, password, db_name
+from rich import print as rprint
 
 
 def db_connection():
@@ -14,7 +15,7 @@ def db_connection():
 def create_table(table_name, parameters):
     try:
         conn = db_connection()
-        print('[INFO] Connection to database successful\n')
+        rprint('[italic green][INFO] Connection to database successful[/italic green]\n')
         with conn.cursor() as c:
             c.execute(
                 f"""CREATE TABLE IF NOT EXISTS {table_name}(
@@ -22,28 +23,28 @@ def create_table(table_name, parameters):
             )
 
         conn.commit()
-        print(f'[INFO] table {table_name} created successfully\n')
+        rprint(f'[italic green][INFO] table {table_name} created successfully[/italic green]\n')
 
     except Exception as e:
-        print('[INFO] Error while working with PostgreSQL', e, "\n")
+        rprint('[italic red][INFO] Error while working with PostgreSQL[/italic red]', e, "\n")
 
     finally:
         if conn:
             conn.close()
-            print('[INFO] PostgreSQL connection closed')
+            rprint('[italic green][INFO] PostgreSQL connection closed[/italic green]')
 
 
 def insert_into_table(table_name, columns, values_amount, values):
     try:
         conn = db_connection()
-        print("[INFO] Connection to database successful\n")
+        rprint("[italic green][INFO] Connection to database successful[/italic green]\n")
         with conn.cursor() as c:
             c.execute(f"""INSERT INTO {table_name} ({columns}) VALUES {values};""")
         conn.commit()
-        print(f'[INFO] Successfully inserted data into {table_name} table\n')
+        rprint(f'[italic green][INFO] Successfully inserted data into {table_name} table[/italic green]\n')
 
     except Exception as e:
-        print(f"[INFO] Error while trying to insert data to {table_name} table", e, "\n")
+        rprint(f"[italic red][INFO] Error while trying to insert data to {table_name} table[/italic red]", e, "\n")
 
     finally:
         if conn:
@@ -53,17 +54,17 @@ def insert_into_table(table_name, columns, values_amount, values):
 def print_table_data(data, table_name, condition):
     try:
         conn = db_connection()
-        print("[INFO] Connection to database successful\n")
+        rprint("[italic green][INFO] Connection to database successful[/italic green]\n")
 
         with conn.cursor() as c:
             c.execute(f"""SELECT {data} FROM {table_name} {condition};""")
             for line in c.fetchall():
                 print(line)
 
-        print(f'[INFO] Successfully selected data from {table_name} table\n')
+        rprint(f'[italic green][INFO] Successfully selected data from {table_name} table[/italic green]\n')
 
     except Exception as e:
-        print(f"[INFO] Error while trying to select data from {table_name} table", e, "\n")
+        rprint(f"[italic red][INFO] Error while trying to select data from {table_name} table[/italic red]", e, "\n")
 
     finally:
         if conn:

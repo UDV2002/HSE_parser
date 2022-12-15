@@ -68,7 +68,3 @@ def print_table_data(data, table_name, condition):
     finally:
         if conn:
             conn.close()
-
-
-
-

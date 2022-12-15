@@ -71,6 +71,6 @@ def show_magister_courses(parameter):
 
 
 if __name__ == '__main__':
-    print('App is running')
+    print('App is running...')
     app()
 

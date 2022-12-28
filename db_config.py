@@ -1,5 +1,5 @@
 host = 'localhost'
 user = 'postgres'
-password = 'pent02'
-db_name = 'HSE'
+password = ''
+db_name = 'HSE_parser'
 port = '5432'
